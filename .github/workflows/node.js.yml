@@ -25,5 +25,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - run: cd app && npm ci
-      - run: zip -r publish.zip ./app/**
+      - run: zip -r publish.zip app
       - run: aws lambda update-function-code --function-name=sam-app-HelloWorldFunction-DFliqYebznbI --zip-file=fileb://publish.zip
